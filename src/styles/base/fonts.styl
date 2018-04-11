@@ -1,0 +1,33 @@
+/* IMPORT FONTS, DEFINE VARIABLES, MIXINS AND FUNCTIONS */
+
+// IMPORT FONTS
+
+// 'Font family name'
+ @import url();
+
+// VARIABLES
+
+// Font family
+font-primary = ''
+
+// Font weight
+
+font-light = 300
+font-normal = 400
+font-semi-bold = 600
+font-bold=700
+font-black = 900
+
+font-base-size = 16
+
+// MIXINS AND FUNCTIONS
+
+px2rem(size)
+  return unit(size / font-base-size, rem)
+
+px2em(size)
+  return unit(size / font-base-size, em)
+
+font-secondary(size = 16)
+  font-family font-family--secondary
+  font-size: px2rem(size)
