@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const slash = require('slash');
 
 const APP_SRC = path.resolve(__dirname, 'src');
 const APP_DIST = path.resolve(__dirname, 'dist');
@@ -16,7 +17,7 @@ module.exports = merge(common, {
         use: [{
           loader: 'file-loader',
           options: {
-            name: path.join('fonts', '[name].[ext]')
+            name: slash(path.join('fonts', '[name].[ext]'))
           }
         }]
       },
@@ -26,7 +27,7 @@ module.exports = merge(common, {
         use: [{
           loader: 'file-loader',
           options: {
-            name: path.join('images', '[name].[ext]')
+            name: slash(path.join('images', '[name].[ext]'))
           }
         }]
       }

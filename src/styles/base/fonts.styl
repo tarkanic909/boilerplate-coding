@@ -8,15 +8,17 @@
 // VARIABLES
 
 // Font family
-font-primary = ''
+ff--primary = ''
+ff--secondary = ''
 
 // Font weight
 
-font-light = 300
-font-normal = 400
-font-semi-bold = 600
-font-bold=700
-font-black = 900
+fw--light = 300
+fw--normal = 400
+fw--semi-bold = 600
+fw--bold=700
+fw--extra-bold = 800
+fw--black = 900
 
 font-base-size = 16
 
@@ -28,6 +30,15 @@ px2rem(size)
 px2em(size)
   return unit(size / font-base-size, em)
 
-font-secondary(size = 16)
-  font-family font-family--secondary
+text-size(size = 16)
   font-size: px2rem(size)
+
+font-primary(size = 16, weight = font-normal)
+  font-family ff--primary
+  text-size(size)
+  font-weight weight
+
+font-secondary(size = 16, weight = font-normal)
+  font-family ff--secondary
+  text-size(size)
+  font-weight weight
