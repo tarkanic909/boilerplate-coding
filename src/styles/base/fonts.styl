@@ -2,23 +2,30 @@
 
 // IMPORT FONTS
 
-// 'Font family name'
- @import url();
+// {Font name}
+@import url('{Font url}');
+
+// {Font name}
+@font-face {
+  font-family: '{Font name}';
+  font-weight '{Font weight}'
+  src: url('{Font url}');
+}
 
 // VARIABLES
 
 // Font family
-ff--primary = ''
-ff--secondary = ''
+font-primary = '{Font name}', sans-serif
+font-secondary = '{Font name}', serif
 
 // Font weight
 
-fw--light = 300
-fw--normal = 400
-fw--semi-bold = 600
-fw--bold=700
-fw--extra-bold = 800
-fw--black = 900
+font-light = 300
+font-normal = 400
+font-semi-bold = 600
+font-bold=700
+font-extra-bold = 800
+font-black = 900
 
 font-base-size = 16
 
@@ -33,12 +40,13 @@ px2em(size)
 text-size(size = 16)
   font-size: px2rem(size)
 
-font-primary(size = 16, weight = font-normal)
-  font-family ff--primary
+
+text-primary(size = 16, weight = font-normal)
+  font-family font-primary
   text-size(size)
   font-weight weight
 
-font-secondary(size = 16, weight = font-normal)
-  font-family ff--secondary
+text-secondary(size = 16, weight = font-normal)
+  font-family font-secondary
   text-size(size)
   font-weight weight
